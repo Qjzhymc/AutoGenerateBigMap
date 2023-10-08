@@ -16,13 +16,13 @@ xMargin = 10
 yMargin = 100
 
 moveTime = 1
-xDragTime = 6
-yDragTime = 4
+xDragTime = 4
+yDragTime = 2
 
 # 第一行 0-9 
 for i in range(10):
     pyautogui.moveTo(xMargin, yMargin, duration=moveTime)
-    pyautogui.dragTo(sizex-xMargin, yMargin, duration=xDragTime, button='left')
+    pyautogui.dragTo(sizex-xMargin, yMargin, duration=xDragTime, button='left', tween=pyautogui.easeOutQuad)
     image = pyautogui.screenshot()
     cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin))) # left, upper, right, lower
     path = os.path.join(os.path.dirname(__file__), 'screenshot/', str(i) + '.png')
@@ -32,7 +32,7 @@ for i in range(10):
 
 # 10
 pyautogui.moveTo(xMargin, sizey-yMargin, duration=moveTime)
-pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left')
+pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left',tween=pyautogui.easeOutQuad)
 image =  pyautogui.screenshot()
 cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
 path = os.path.join(os.path.dirname(__file__), 'screenshot/', '10.png')
@@ -42,7 +42,7 @@ cropped_image.save(path)
 # 第二行 11-19
 for i in range(9):
     pyautogui.moveTo(sizex-xMargin, yMargin, duration=moveTime)
-    pyautogui.dragTo(xMargin, yMargin, duration=xDragTime, button='left')
+    pyautogui.dragTo(xMargin, yMargin, duration=xDragTime, button='left',tween=pyautogui.easeOutQuad)
     image =  pyautogui.screenshot()
     cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
     path = os.path.join(os.path.dirname(__file__), 'screenshot/', str(i+11) + '.png')
@@ -51,7 +51,7 @@ for i in range(9):
 
 #20
 pyautogui.moveTo(xMargin, sizey-yMargin, duration=moveTime)
-pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left')
+pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left', tween=pyautogui.easeOutQuad)
 image =  pyautogui.screenshot()
 cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
 path = os.path.join(os.path.dirname(__file__), 'screenshot/', '20.png')
@@ -60,7 +60,7 @@ cropped_image.save(path)
 # 第三行 21-29
 for i in range(9):
     pyautogui.moveTo(xMargin, yMargin, duration=moveTime)
-    pyautogui.dragTo(sizex-xMargin, yMargin, duration=xDragTime, button='left')
+    pyautogui.dragTo(sizex-xMargin, yMargin, duration=xDragTime, button='left', tween=pyautogui.easeOutQuad)
     #每个图片大小都是1439*860大小
     image = pyautogui.screenshot()
     cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin))) # left, upper, right, lower
@@ -70,7 +70,7 @@ for i in range(9):
 
 #30
 pyautogui.moveTo(xMargin, sizey-yMargin, duration=moveTime)
-pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left')
+pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left', tween=pyautogui.easeOutQuad)
 image =  pyautogui.screenshot()
 cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
 path = os.path.join(os.path.dirname(__file__), 'screenshot/', '30.png')
@@ -79,7 +79,7 @@ cropped_image.save(path)
 #第四行 31-39
 for i in range(9):
     pyautogui.moveTo(sizex-xMargin, yMargin, duration=moveTime)
-    pyautogui.dragTo(xMargin, yMargin, duration=xDragTime, button='left')
+    pyautogui.dragTo(xMargin, yMargin, duration=xDragTime, button='left', tween=pyautogui.easeOutQuad)
     image =  pyautogui.screenshot()
     cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
     path = os.path.join(os.path.dirname(__file__), 'screenshot/', str(i+31) + '.png')
@@ -87,7 +87,7 @@ for i in range(9):
     time.sleep(1)
 #40
 pyautogui.moveTo(xMargin, sizey-yMargin, duration=moveTime)
-pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left')
+pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left', tween=pyautogui.easeOutQuad)
 image =  pyautogui.screenshot()
 cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
 path = os.path.join(os.path.dirname(__file__), 'screenshot/', '40.png')
@@ -96,7 +96,7 @@ cropped_image.save(path)
 #第五行 41-49
 for i in range(9):
     pyautogui.moveTo(xMargin, yMargin, duration=moveTime)
-    pyautogui.dragTo(sizex-xMargin, yMargin, duration=xDragTime, button='left')
+    pyautogui.dragTo(sizex-xMargin, yMargin, duration=xDragTime, button='left', tween=pyautogui.easeOutQuad)
     #每个图片大小都是1439*860大小
     image = pyautogui.screenshot()
     cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin))) # left, upper, right, lower
@@ -106,7 +106,7 @@ for i in range(9):
 
 # 50
 pyautogui.moveTo(xMargin, sizey-yMargin, duration=moveTime)
-pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left')
+pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left', tween=pyautogui.easeOutQuad)
 image =  pyautogui.screenshot()
 cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
 path = os.path.join(os.path.dirname(__file__), 'screenshot/', '50.png')
@@ -115,7 +115,7 @@ cropped_image.save(path)
 #第六行 51-59
 for i in range(9):
     pyautogui.moveTo(sizex-xMargin, yMargin, duration=moveTime)
-    pyautogui.dragTo(xMargin, yMargin, duration=xDragTime, button='left')
+    pyautogui.dragTo(xMargin, yMargin, duration=xDragTime, button='left', tween=pyautogui.easeOutQuad)
     image =  pyautogui.screenshot()
     cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
     path = os.path.join(os.path.dirname(__file__), 'screenshot/', str(i+51) + '.png')
@@ -123,7 +123,7 @@ for i in range(9):
     time.sleep(1)
 # 60
 pyautogui.moveTo(xMargin, sizey-yMargin, duration=moveTime)
-pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left')
+pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left', tween=pyautogui.easeOutQuad)
 image =  pyautogui.screenshot()
 cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
 path = os.path.join(os.path.dirname(__file__), 'screenshot/', '60.png')
@@ -132,7 +132,7 @@ cropped_image.save(path)
 #第七行 61-69
 for i in range(9):
     pyautogui.moveTo(xMargin, yMargin, duration=moveTime)
-    pyautogui.dragTo(sizex-xMargin, yMargin, duration=xDragTime, button='left')
+    pyautogui.dragTo(sizex-xMargin, yMargin, duration=xDragTime, button='left', tween=pyautogui.easeOutQuad)
     #每个图片大小都是1439*860大小
     image = pyautogui.screenshot()
     cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin))) # left, upper, right, lower
@@ -142,7 +142,7 @@ for i in range(9):
 
 #70
 pyautogui.moveTo(xMargin, sizey-yMargin, duration=moveTime)
-pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left')
+pyautogui.dragTo(xMargin, yMargin, duration=yDragTime, button='left', tween=pyautogui.easeOutQuad)
 image =  pyautogui.screenshot()
 cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
 path = os.path.join(os.path.dirname(__file__), 'screenshot/', '70.png')
@@ -151,7 +151,7 @@ cropped_image.save(path)
 # 第八行 71-79
 for i in range(9):
     pyautogui.moveTo(sizex-xMargin, yMargin, duration=moveTime)
-    pyautogui.dragTo(xMargin, yMargin, duration=xDragTime, button='left')
+    pyautogui.dragTo(xMargin, yMargin, duration=xDragTime, button='left', tween=pyautogui.easeOutQuad)
     image =  pyautogui.screenshot()
     cropped_image = image.crop((2*xMargin, 2*yMargin, 2*(sizex-xMargin), 2*(sizey-yMargin)))
     path = os.path.join(os.path.dirname(__file__), 'screenshot/', str(i+71) + '.png')
